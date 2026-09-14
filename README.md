@@ -1,24 +1,24 @@
 # RecipeGPT
 
-Um GPT (Transformer decoder-only) construído do zero em PyTorch — sem usar
-nenhuma biblioteca de alto nível pronta (`transformers`, `tiktoken`, etc) —
+Um GPT (Transformer decoder-only) construído do zero em PyTorch sem usar
+nenhuma biblioteca de alto nível pronta (`transformers`, `tiktoken`, etc)
 treinado para escrever receitas de culinária completas, incluindo
 ingredientes, modo de preparo e informação nutricional (calorias, proteína,
 gordura, carboidratos).
 
 Este projeto foi construído após terminar o curso **[Neural Networks: Zero
 to Hero](https://karpathy.ai/zero-to-hero.html)**, de Andrej Karpathy, como
-forma de aplicar na prática o que foi aprendido. Tudo — o tokenizer BPE, o
-mecanismo de self-attention, o Transformer inteiro — foi implementado
+forma de aplicar na prática o que foi aprendido. Tudo o tokenizer BPE, o
+mecanismo de self-attention, o Transformer inteiro foi implementado
 manualmente, seguindo os princípios ensinados no curso.
 
 > ⚠️ **Aviso importante: isso não é um livro de receitas.**
 > Este é um projeto educacional para aprender como um GPT funciona por
-> dentro — **não use as receitas geradas para cozinhar de verdade.** O
+> dentro **não use as receitas geradas para cozinhar de verdade.** O
 > modelo é pequeno e frequentemente gera texto sem sentido, combinações de
 > ingredientes estranhas ou incoerentes, e valores nutricionais **inventados**
 > (não calculados). Mais grave ainda: ele não tem nenhuma noção de
-> **segurança alimentar** — pode "sugerir" tempos/temperaturas de cozimento
+> **segurança alimentar** pode "sugerir" tempos/temperaturas de cozimento
 > perigosos (por exemplo, para carne, frango ou ovos mal cozidos), porque
 > ele só reproduz *padrões de texto*, sem entender o que está escrevendo.
 > Trate toda saída deste modelo como curiosidade técnica, nunca como
@@ -40,7 +40,7 @@ manualmente, seguindo os princípios ensinados no curso.
 O modelo aprende a estrutura de uma receita (título, resumo, lista de
 ingredientes, passos numerados, informação nutricional) e gera texto em
 inglês fluente em nível de palavra, ainda com limitações de coerência
-gramatical em frases mais longas — esperado dado o tamanho do modelo (~1-2M
+gramatical em frases mais longas esperado dado o tamanho do modelo (~1-2M
 parâmetros) e do dataset (~1-1.5M caracteres), muito menor que os de LLMs de
 produção. **Veja o aviso no topo deste README antes de usar qualquer saída
 gerada.**
@@ -129,7 +129,7 @@ python generate.py --prompt "Title: Chocolate" --max_tokens 300
   continua ativo e degrada a qualidade da geração
 - Que modelos de linguagem pura não têm noção de correção numérica/factual:
   o modelo reproduz o *formato* de onde números aparecem, mas não verifica
-  se um valor nutricional gerado faz sentido — essa é uma limitação
+  se um valor nutricional gerado faz sentido essa é uma limitação
   estrutural, não um bug, e é o tipo de problema que técnicas como *function
   calling* resolvem em aplicações reais
 
@@ -140,7 +140,7 @@ python generate.py --prompt "Title: Chocolate" --max_tokens 300
   Crédito: *"Recipe data: UniTools, CC BY-SA 4.0"*.
 - **Receitas sintéticas adicionais**: geradas programaticamente por
   `data/generate_recipes.py`, combinando uma base de dados nutricionais
-  genérica com um algoritmo de composição — conteúdo original, sem
+  genérica com um algoritmo de composição conteúdo original, sem
   restrições de direitos autorais.
 - **Todo o código** deste repositório está sob licença MIT (veja `LICENSE`).
 
