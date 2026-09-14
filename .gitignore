@@ -1,0 +1,25 @@
+# Ambiente virtual
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Dados grandes (baixe/gere seguindo o README, não commitar aqui)
+data/receitas.json
+data/corpus_real.txt
+data/minhas_receitas*.txt
+
+# Checkpoints treinados (grandes, geram-se rodando train.py)
+checkpoints/*.pt
+checkpoints/*.json
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
